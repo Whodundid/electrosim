@@ -1,0 +1,178 @@
+/*public void drawInputs() {
+		for (int i = 0; i < numInputs; i++) {
+			JLabel point = (JLabel) inputPoints.getObject(i);
+			pointValue = obj.getPointValue(i);
+			if (i == 0 && isSingletonInputs && pointValue == 0) {
+				img = new ImageIcon("objPoints/single_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, base.getLocation().y + 10, img.getIconWidth(), img.getIconHeight());
+				panel.add(point);
+			}
+			else if (i == 0 && isSingletonInputs && pointValue == 1) {
+				img = new ImageIcon("objPoints/bot_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 15;
+				panel.add(point);
+			}
+			else if (i == 0 && isDoubleInputs && pointValue == 0) {
+				img = new ImageIcon("objPoints/bot_many_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 15;
+				panel.add(point);
+			}
+			else if (i == 0 && isDoubleInputs && pointValue == 1) {
+				img = new ImageIcon("objPoints/bot_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 15;
+				panel.add(point);
+			}
+			else if (i == 0 && pointValue == 0) {
+				img = new ImageIcon("objPoints/bot_many_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+			else if (i == 0 && pointValue == 1) {
+				img = new ImageIcon("objPoints/bot_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+			else if (i > 0 && i < numInputs - 1 && pointValue == 0) {
+				img = new ImageIcon("objPoints/mid_many_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+			else if (i > 0 && i < numInputs - 1 && pointValue == 1) {
+				img = new ImageIcon("objPoints/mid_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+			else if (i == numInputs - 1 && isDoubleInputs && pointValue == 0) {
+				img = new ImageIcon("objPoints/top_many_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 14;
+				panel.add(point);
+			}
+			else if (i == numInputs - 1 && isDoubleInputs && pointValue == 1) {
+				img = new ImageIcon("objPoints/top_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 14;
+				panel.add(point);
+			}
+			else if (i == numInputs - 1 && pointValue == 0) {
+				img = new ImageIcon("objPoints/top_many_null_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+			else if (i == numInputs - 1 && pointValue == 1) {
+				img = new ImageIcon("objPoints/top_many_on_Point.png");
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x - img.getIconWidth() + 2, currentPosIn, img.getIconWidth(), img.getIconHeight());
+				currentPosIn -= 7;
+				panel.add(point);
+			}
+		}
+	}
+	
+	public void drawOutputs() {
+		for (int i = 0; i < numOutputs; i++) {
+			JLabel point = (JLabel) outputPoints.getObject(i);
+			pointValue = obj.getOutputValueInt();
+			if (i == 0 && isSingletonOutputs && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/single_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, base.getLocation().y + 10, img.getIconWidth(), img.getIconHeight());
+				panel.add(point);
+			}
+			else if (i == 0 && isSingletonOutputs && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/single_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, base.getLocation().y + 10, img.getIconWidth(), img.getIconHeight());
+				panel.add(point);
+			}
+			else if (i == 0 && isDoubleOutputs && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/top_many_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 15;
+				panel.add(point);
+			}
+			else if (i == 0 && isDoubleOutputs && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/top_many_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 15;
+				panel.add(point);
+			}
+			else if (i == 0 && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/top_many_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+			else if (i == 0 && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/top_many_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+			else if (i > 0 && i < numOutputs - 1 && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/mid_many_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+			else if (i > 0 && i < numOutputs - 1 && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/mid_many_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+			else if (i == numOutputs - 1 && isDoubleOutputs && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/bot_many_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 15;
+				panel.add(point);
+			}
+			else if (i == numOutputs - 1 && isDoubleOutputs && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/bot_many_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 15;
+				panel.add(point);
+			}
+			else if (i == numOutputs - 1 && pointValue == 0) {
+				RotateImage img = new RotateImage("objPoints/bot_many_null_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+			else if (i == numOutputs - 1 && pointValue == 1) {
+				RotateImage img = new RotateImage("objPoints/bot_many_on_Point.png", 180);
+				point.setIcon(img);
+				point.setBounds(base.getLocation().x + base.getWidth() - 2, currentPosOut, img.getIconWidth(), img.getIconHeight());
+				currentPosOut -= 7;
+				panel.add(point);
+			}
+		}
+	}*/

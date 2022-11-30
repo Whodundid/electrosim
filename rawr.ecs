@@ -1,0 +1,31 @@
+ST
+ElectroSim B0.18
+OD wire wire3 0 0 347 126
+CM lever1 0 and0 0
+OD wire wire4 0 0 417 112
+CM and0 4 dout0 0
+OD wire wire1 0 0 347 119
+CM lever0 0 and0 1
+OD digitalOutput dout0 1 0 438 98
+IV 0 0
+IC wire4 0
+CM and0 0
+OD wire wire2 0 0 347 105
+CM lever1 0 and0 2
+OD logicGate and and0 4 1 368 98
+IV 0 0 1 0 2 0 3 0
+OV 4 0
+IC wire0 3 wire1 1 wire2 2 wire3 0
+OC wire4 4
+CM lever0 3 lever0 1 lever1 2 lever1 0 dout0 4
+OD wire wire0 0 0 347 98
+CM lever0 0 and0 3
+OD digitalInput lever1 0 1 305 119
+OV 0 0
+OC wire2 0 wire3 0
+CM and0 0 and0 0
+OD digitalInput lever0 0 1 305 91
+OV 0 0
+OC wire0 0 wire1 0
+CM and0 0 and0 0
+EN

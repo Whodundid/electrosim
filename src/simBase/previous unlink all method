@@ -1,0 +1,93 @@
+public void unlinkEverything(String ID) {
+		SimObject obj = StorrageSpace.retrieve(ID);
+		int tempPoint;
+		int numInputs = obj.getInputsMap().size();
+		System.out.println(obj.getID());
+		for (int i = 0; i < numInputs; i++) {
+			if (!obj.getInputsMap().isEmpty()) {
+				if (i == 1 && obj.getInputsMap().size() > 0) {
+					tempObj = (SimObject) obj.getInputsMap().getObject(i - 1);
+					i--;
+				} else
+					tempObj = (SimObject) obj.getInputsMap().getObject(i);
+			} else {
+				updateObj(tempObj.getID(), true);
+			}
+			if (obj.getOutputsMap().containsObject(tempObj)) {
+				tempPoint = obj.getOutputsMap().getValue(i);
+				this.unlinkFromPoint(obj.getID(), tempPoint, tempObj.getID());
+				tempObj.getOutputsMap().removeMapsContainingObj(obj);
+				tempObj.getInputsMap().removeMapsContainingObj(obj);
+				if (tempObj instanceof Wire) {
+					SimObject wireDest;
+					for (int q = 0; q < tempObj.getOutputsMap().size(); q++) {
+						wireDest = (SimObject) tempObj.getOutputsMap().getObject(q);
+						wireDest.getOutputsMap().removeMapsContainingObj(tempObj);
+						wireDest.getInputsMap().removeMapsContainingObj(tempObj);
+					}
+					referencePanel.remove(tempObj.getRefImg());
+					StorrageSpace.remove(tempObj.getID());
+				}
+			}
+			if (obj.getInputsMap().containsObject(tempObj)) {
+				tempPoint = obj.getInputsMap().getValue(i);
+				this.unlinkFromPoint(obj.getID(), tempPoint, tempObj.getID());
+				tempObj.getOutputsMap().removeMapsContainingObj(obj);
+				tempObj.getInputsMap().removeMapsContainingObj(obj);
+				if (tempObj instanceof Wire) {
+					SimObject wireDest;
+					for (int q = 0; q < tempObj.getOutputsMap().size(); q++) {
+						wireDest = (SimObject) tempObj.getOutputsMap().getObject(q);
+						wireDest.getOutputsMap().removeMapsContainingObj(tempObj);
+						wireDest.getInputsMap().removeMapsContainingObj(tempObj);
+					}
+					referencePanel.remove(tempObj.getRefImg());
+					StorrageSpace.remove(tempObj.getID());
+				}
+			}
+		}
+		int numOutputs = obj.getOutputsMap().size();
+		for (int i = 0; i < numOutputs; i++) {
+			if (!obj.getOutputsMap().isEmpty()) {
+				if (i == 1 && obj.getOutputsMap().size() > 0) {
+					tempObj = (SimObject) obj.getOutputsMap().getObject(i - 1);
+					i--;
+				} else
+					tempObj = (SimObject) obj.getOutputsMap().getObject(i);
+			} else {
+				updateObj(tempObj.getID(), true);
+			}
+			if (obj.getOutputsMap().containsObject(tempObj)) {
+				tempPoint = obj.getOutputsMap().getValue(i);
+				this.unlinkFromPoint(obj.getID(), tempPoint, tempObj.getID());
+				tempObj.getOutputsMap().removeMapsContainingObj(obj);
+				tempObj.getInputsMap().removeMapsContainingObj(obj);
+				if (tempObj instanceof Wire) {
+					SimObject wireDest;
+					for (int q = 0; q < tempObj.getOutputsMap().size(); q++) {
+						wireDest = (SimObject) tempObj.getOutputsMap().getObject(q);
+						wireDest.getOutputsMap().removeMapsContainingObj(tempObj);
+						wireDest.getInputsMap().removeMapsContainingObj(tempObj);
+					}
+					referencePanel.remove(tempObj.getRefImg());
+					StorrageSpace.remove(tempObj.getID());
+				}
+			}
+			if (obj.getInputsMap().containsObject(tempObj)) {
+				tempPoint = obj.getInputsMap().getValue(i);
+				this.unlinkFromPoint(obj.getID(), tempPoint, tempObj.getID());
+				tempObj.getOutputsMap().removeMapsContainingObj(obj);
+				tempObj.getInputsMap().removeMapsContainingObj(obj);
+				if (tempObj instanceof Wire) {
+					SimObject wireDest;
+					for (int q = 0; q < tempObj.getOutputsMap().size(); q++) {
+						wireDest = (SimObject) tempObj.getOutputsMap().getObject(q);
+						wireDest.getOutputsMap().removeMapsContainingObj(tempObj);
+						wireDest.getInputsMap().removeMapsContainingObj(tempObj);
+					}
+					referencePanel.remove(tempObj.getRefImg());
+					StorrageSpace.remove(tempObj.getID());
+				}
+			}
+		}
+	}

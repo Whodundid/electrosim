@@ -1,0 +1,127 @@
+ElectroSim Build Notes
+Author: Hunter Troy Bragg
+build number: 18
+build date: 3-19-2017
+----------------------------------------------------------------
+Main additions and changes:
+
+-Rewrote visual points entirely.
+	-Points are now independent objects extended from 
+	 JLabels.
+-Removed PointLinkManager and moved point linking directly into 
+ the object point class.
+-Point rotation and rotated images now can support north, east,
+ south, and west rotations and properly display their rotated
+ picture inside of a bounding box that fits the image's bounds.
+-Objects now account for having an odd or even number of input
+ or output points.
+	-If there are an even number of points in either inputs 
+	 or outputs, a gap is placed in the middle of the drawn 
+	 points to account for the lack of a middle point.
+-A file can now be directly loaded into the design creator upon
+ program startup.
+	-This makes testing specific circuits much faster.
+	-If a file is loaded, a default tab is not created.
+-NumberedHashMaps are now parametized.
+	-This removes the need to always make a cast when
+	 retrieving a variable.
+-NumberedHashMaps now truly support any type of object.
+-NumberedHashMaps now have the ability to print out all of their
+ contents for debug purposes.
+-Rewrote all of VisualGUI.
+	-Reorganized all of VisualGUI's contents into their own
+	 separate classes.
+	 	-These classes consist of the following:
+	 		-VisualMenus (package)
+	 			-DesignExplorer
+	 			-EditMenu
+	 			-FileMenu
+	 			-PartList
+	 			-SimMenu
+	 			-SimulatorMenuBar
+	 			-UtilitiesMenu
+	 		-VisualPartButtons (package)
+	 			-Parts
+-Objects can now be double clicked to bring up a properties menu.
+	-Lever does not support this feature.
+-Added a yes or no dialog box which appears when attempting to
+ save over an already existing file.
+	-Saving from the console uses the previous method where
+	 file overwriting is handled through the console.
+-When a file is saved, the saved name now is set as both the tab
+ name and the DesignPanel's name.
+-When hovering over the close button on a design tab, the button
+ now gives visual feedback.
+-File_Close now closes the currently selected DesignTab.
+-Moved general object classes such as SimObject, ObjectTypes,
+ GateTypes, ect. into the base placeable package.
+-Moved the NumberedHashMap into simUtil as it is a global sim
+ utility object.
+-Added a 'Save as..." button in the file menu which performs the
+ same function as the save button did.
+-The 'Save' file button now will try to save the current tab in
+ the same directory that the file is. If the current tab has
+ never been saved anywhere, then it will bring up the file
+ chooser to select a place to save it.
+ 
+----------------------------------------------------------------
+Currently in progress additions and changes:
+
+-Rewriting link physics to account for wire values.
+	-Points connected to wires should all have the same 
+	 value as the wire's output value.
+	-A wire's output value is 1 if any of it's connections
+	 output's are a 1.
+-Rewriting each SimObject to account for not only it's own local
+ logic, but also any wires connected to the SimObject's output
+ poitns.
+-Rewriting links to be based off of individual object point
+ values instead of the object's global output value.
+
+----------------------------------------------------------------
+Known bugs in build:
+
+-(Fixed) Part ID doesn't show up in properties menu for loaded 
+ files.
+-When saving a file that is going to overwrite an already
+ existing file, if the file chooser is closed with the 'x',
+ whatever path was set in the chooser is still passed to the
+ design saver.
+ 	-A check needs to be made to see if the close button is
+ 	 pressed and if so, don't run the design saver.
+
+----------------------------------------------------------------
+Fixed bugs from previous builds:
+
+-Fixed points loosing their selection status when moving an
+ object quickly.
+-Fixed points not remembering if they are selected when moving 
+ the mouse over them.
+-Fixed object points not being properly aligned to the grid if
+ there were more than three input or output points.
+-When saving a file, the final directory the saver ended at was
+ not storred as the current directory.
+-Fixed a bug when loading a file where the Y position for a
+ loaded object would be set to -1 by default.
+-Fixed being able to open multiple properties menus for one
+ object.
+-Fixed a bug where when closing a design tab, it would close 
+ the tab currently selected but not necessarily the one that was
+ pressed.
+-Fixed a bug when saving a file where if the saver was exited,
+ a null pointer would be thrown.
+-Fixed levers being visuall selected when loading a schematic.
+-Fixed douts being deselected when updating their visual.
+-Fixed a crucial bug where when loading a file, the loader would 
+ skip over lines after reading the "IV" loader instruction. 
+ Ultimately this corrupted the circuit upon load. It's honestly 
+ magical that files could even be properly loaded before. 
+
+----------------------------------------------------------------
+Additional notes:
+
+-Classes which still require rewrites:
+	-All SimObject's
+
+----------------------------------------------------------------
+----------------------------------------------------------------

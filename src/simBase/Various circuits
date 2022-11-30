@@ -1,0 +1,344 @@
+		And baconFace = new And("baconFace", 2, 1);
+		Xnor tablush = new Xnor("tablush", 2, 1);
+		Xor warhol = new Xor("warhol", 2, 1);
+		Nand gane = new Nand("gane", 2, 1);
+		Or bananas = new Or("bananas", 3, 1);
+		And yarbles = new And("yarbles", 2, 1);
+		Lever in1 = new Lever("in1");
+		Lever in2 = new Lever("in2");
+		Lever in3 = new Lever("in3");
+				
+		in1.linkObjPoint(0, baconFace, 0);
+		in1.linkObjPoint(0, warhol, 0);
+		in1.linkObjPoint(0, gane, 0);
+		
+		in2.linkObjPoint(0, baconFace, 1);
+		in2.linkObjPoint(0, warhol, 1);
+		in2.linkObjPoint(0, bananas, 2);
+		
+		in3.linkObjPoint(0, yarbles, 1);
+		
+		warhol.linkObjPoint(2, gane, 1);
+		baconFace.linkObjPoint(2, tablush, 1);
+		baconFace.linkObjPoint(2, bananas, 1);
+		gane.linkObjPoint(2, tablush, 0);
+		tablush.linkObjPoint(2, bananas, 0);
+		bananas.linkObjPoint(3, yarbles, 0);
+		
+		warhol.showCurrentStats();
+		baconFace.showCurrentStats();
+		gane.showCurrentStats();
+		tablush.showCurrentStats();
+		bananas.showCurrentStats();
+		yarbles.showCurrentStats();
+		
+		in1.toggleOutput();
+		System.out.println();
+		in2.toggleOutput();
+		System.out.println();
+		
+		warhol.showCurrentStats();
+		baconFace.showCurrentStats();
+		gane.showCurrentStats();
+		tablush.showCurrentStats();
+		bananas.showCurrentStats();
+		yarbles.showCurrentStats();
+		
+		in2.toggleOutput();
+		System.out.println();
+		in3.toggleOutput();
+		System.out.println();
+		
+		warhol.showCurrentStats();
+		baconFace.showCurrentStats();
+		gane.showCurrentStats();
+		tablush.showCurrentStats();
+		bananas.showCurrentStats();
+		yarbles.showCurrentStats();
+		
+		in1.printPointmap();
+		in2.printPointmap();
+		baconFace.printPointmap();
+		warhol.printPointmap();
+		gane.printPointmap();
+		tablush.printPointmap();
+		bananas.printPointmap();
+		yarbles.printPointmap();
+		
+		-------------------------------------------------
+		
+		Lever l1 = new Lever("l1");
+		Lever l2 = new Lever("l2");
+		Lever l3 = new Lever("l3");
+		Lever l4 = new Lever("l4");
+		Lever l5 = new Lever("15");
+		
+		DOut o1 = new DOut("o1");
+		DOut o2 = new DOut("o2");
+		DOut o3 = new DOut("o3");
+		
+		Xor xor1 = new Xor("xor1",2,1);
+		Xor xor2 = new Xor("xor2",2,1);
+		Xor xor3 = new Xor("xor3",2,1);
+		Xor xor4 = new Xor("xor4",2,1);
+		Xor xor5 = new Xor("xor5",2,1);
+		Xor xor6 = new Xor("xor6",2,1);
+		Xor xor7 = new Xor("xor7",2,1);
+		
+		And and1 = new And("and1",2,1);
+		And and2 = new And("and2",2,1);
+		And and3 = new And("and3",2,1);
+		And and4 = new And("and4",2,1);
+		And and5 = new And("and5",2,1);
+		And and6 = new And("and6",2,1);
+		
+		Or or1 = new Or("or1",2,1);
+		Or or2 = new Or("or2",2,1);
+		Or or3 = new Or("or3",2,1);
+		
+		l1.linkObjPoint(0, xor1, 0);
+		l1.linkObjPoint(0, xor2, 0);
+		l1.linkObjPoint(0, and3, 0);
+		l1.linkObjPoint(0, and6, 0);
+		l1.linkObjPoint(0, xor5, 0);
+		l1.linkObjPoint(0, xor7, 0);
+		
+		l2.linkObjPoint(0, xor3, 0);
+		l2.linkObjPoint(0, and1, 0);
+		
+		l3.linkObjPoint(0, xor1, 1);
+		
+		l4.linkObjPoint(0, xor4, 0);
+		l4.linkObjPoint(0, and2, 0);
+		
+		l5.linkObjPoint(0, xor2, 1);
+		
+		xor1.linkObjPoint(2, xor3, 1);
+		xor1.linkObjPoint(2, and1, 1);
+		
+		xor2.linkObjPoint(2, xor4, 1);
+		xor2.linkObjPoint(2, and2, 1);
+		
+		xor3.linkObjPoint(2, xor5, 1);
+		xor3.linkObjPoint(2, and3, 1);
+		xor3.linkObjPoint(2, and4, 0);
+		
+		and1.linkObjPoint(2, or1, 1);
+		and1.linkObjPoint(2, and5, 1);
+		
+		xor4.linkObjPoint(2, xor6, 1);
+		xor4.linkObjPoint(2, and4, 1);
+		xor4.linkObjPoint(2, and5, 0);
+		
+		and2.linkObjPoint(2, or2, 1);
+		
+		and3.linkObjPoint(2, or1, 0);
+		
+		and4.linkObjPoint(2, and6, 1);
+		
+		and5.linkObjPoint(2, or2, 0);
+		
+		or1.linkObjPoint(2, xor6, 0);
+		
+		or2.linkObjPoint(2, or3, 1);
+		
+		or3.linkObjPoint(2, xor7, 1);
+		
+		and6.linkObjPoint(2, or3, 0);
+		
+		xor5.linkObjPoint(2, o1, 0);
+		
+		xor6.linkObjPoint(2, o2, 0);
+		
+		xor7.linkObjPoint(2, o3, 0);
+		
+		l2.toggleOutput();
+		System.out.println();
+		l3.toggleOutput();
+		System.out.println();
+		l4.toggleOutput();
+		System.out.println();
+		l5.toggleOutput();
+		System.out.println();
+		
+		o1.showCurrentStats();
+		o2.showCurrentStats();
+		o3.showCurrentStats();
+		
+		l1.printPointmap();
+		l2.printPointmap();
+		l3.printPointmap();
+		l4.printPointmap();
+		l5.printPointmap();
+		
+		and1.printPointmap();
+		and2.printPointmap();
+		and3.printPointmap();
+		and4.printPointmap();
+		and5.printPointmap();
+		and6.printPointmap();
+		
+		xor1.printPointmap();
+		xor2.printPointmap();
+		xor3.printPointmap();
+		xor4.printPointmap();
+		xor5.printPointmap();
+		xor6.printPointmap();
+		xor7.printPointmap();
+		
+		or1.printPointmap();
+		or2.printPointmap();
+		or3.printPointmap();
+		
+		---------------------------------
+		
+		Or deltaSquad = new Or("deltaSquad",2,1);
+		And betaPattern = new And("betaPattern",2,1);
+		Lever l1 = new Lever("l1");
+		Lever l2 = new Lever("l2");
+		DigitalLight o1 = new DigitalLight("o1");
+		
+		l2.linkObjPoint(0, deltaSquad, 1);
+		l1.linkObjPoint(0, betaPattern, 0);
+		betaPattern.linkObjPoint(2, deltaSquad, 0);
+		deltaSquad.linkObjPoint(2, betaPattern, 1);
+		betaPattern.linkObjPoint(2, o1, 0);
+		
+		o1.showCurrentStats();
+		l1.toggleOutput();
+		l2.toggleOutput();
+		o1.showCurrentStats();
+		l2.toggleOutput();
+		o1.showCurrentStats();
+		l1.toggleOutput();
+		o1.showCurrentStats();
+		
+		---------------------------------
+				
+		Lever la = new Lever("la");
+		Lever lb = new Lever("lb");
+		Lever lF = new Lever("lF");
+		
+		DOut oA = new DOut("oA");
+		DOut oB = new DOut("oB");
+		DOut oC = new DOut("oC");
+		DOut oD = new DOut("oD");
+		
+		Not not1 = new Not("not1");
+		Not not2 = new Not("not2");
+		
+		And and1 = new And("and1",3,1);
+		And and2 = new And("and2",3,1);
+		And and3 = new And("and3",3,1);
+		And and4 = new And("and4",3,1);
+		
+		la.linkObjPoint(0, not1, 0);
+		la.linkObjPoint(0, and2, 2);
+		la.linkObjPoint(0, and4, 2);
+		
+		lb.linkObjPoint(0, not2, 0);
+		lb.linkObjPoint(0, and3, 1);
+		lb.linkObjPoint(0, and4, 1);
+		
+		lF.linkObjPoint(0, and1, 0);
+		lF.linkObjPoint(0, and2, 0);
+		lF.linkObjPoint(0, and3, 0);
+		lF.linkObjPoint(0, and4, 0);
+		
+		not1.linkObjPoint(1, and1, 2);
+		not1.linkObjPoint(1, and3, 2);
+		
+		not2.linkObjPoint(1, and1, 1);
+		not2.linkObjPoint(1, and2, 1);
+		
+		and1.linkObjPoint(3, oA, 0);
+		and2.linkObjPoint(3, oB, 0);
+		and3.linkObjPoint(3, oC, 0);
+		and4.linkObjPoint(3, oD, 0);
+		
+		---------------------------------
+		
+		manager1.createLever("l1");
+		manager1.createLever("l2");
+		manager1.createLever("l3");
+		manager1.createLever("l4");
+		manager1.createLever("l5");
+		
+		manager1.createDOut("o1");
+		manager1.createDOut("o2");
+		manager1.createDOut("o3");
+		
+		manager1.createXor("xor1", 2, 1);
+		manager1.createXor("xor2", 2, 1);
+		manager1.createXor("xor3", 2, 1);
+		manager1.createXor("xor4", 2, 1);
+		manager1.createXor("xor5", 2, 1);
+		manager1.createXor("xor6", 2, 1);
+		manager1.createXor("xor7", 2, 1);
+		
+		manager1.createAnd("and1",2,1);
+		manager1.createAnd("and2",2,1);
+		manager1.createAnd("and3",2,1);
+		manager1.createAnd("and4",2,1);
+		manager1.createAnd("and5",2,1);
+		manager1.createAnd("and6",2,1);
+		
+		manager1.createOr("or1",2,1);
+		manager1.createOr("or2",2,1);
+		manager1.createOr("or3",2,1);
+		
+		manager1.linkObjPoint("l1", 0, "xor1", 0);
+		manager1.linkObjPoint("l1", 0, "xor2", 0);
+		manager1.linkObjPoint("l1", 0, "and3", 0);
+		manager1.linkObjPoint("l1", 0, "and6", 0);
+		manager1.linkObjPoint("l1", 0, "xor5", 0);
+		manager1.linkObjPoint("l1", 0, "xor7", 0);
+		
+		manager1.linkObjPoint("l2", 0, "xor3", 0);
+		manager1.linkObjPoint("l2", 0, "and1", 0);
+		
+		manager1.linkObjPoint("l3", 0, "xor1", 1);
+		
+		manager1.linkObjPoint("l4", 0, "xor4", 0);
+		manager1.linkObjPoint("l4", 0, "and2", 0);
+		
+		manager1.linkObjPoint("l5", 0, "xor2", 1);
+		
+		manager1.linkObjPoint("xor1", 2, "xor3", 1);
+		manager1.linkObjPoint("xor1", 2, "and1", 1);
+		
+		manager1.linkObjPoint("xor2", 2, "xor4", 1);
+		manager1.linkObjPoint("xor2", 2, "and2", 1);
+		
+		manager1.linkObjPoint("xor3", 2, "xor5", 1);
+		manager1.linkObjPoint("xor3", 2, "and3", 1);
+		manager1.linkObjPoint("xor3", 2, "and4", 0);
+		
+		manager1.linkObjPoint("and1", 2, "or1", 1);
+		manager1.linkObjPoint("and1", 2, "and5", 1);
+		
+		manager1.linkObjPoint("xor4", 2, "xor6", 1);
+		manager1.linkObjPoint("xor4", 2, "and4", 1);
+		manager1.linkObjPoint("xor4", 2, "and5", 0);
+		
+		manager1.linkObjPoint("and2", 2, "or2", 0);
+		
+		manager1.linkObjPoint("and3", 2, "or1", 0);
+		
+		manager1.linkObjPoint("and4", 2, "and6", 1);
+		
+		manager1.linkObjPoint("and5", 2, "or2", 0);
+		
+		manager1.linkObjPoint("or1", 2, "xor6", 0);
+		
+		manager1.linkObjPoint("or2", 2, "or3", 1);
+		
+		manager1.linkObjPoint("or3", 2, "xor7", 1);
+		
+		manager1.linkObjPoint("and6", 2, "or3", 0);
+		
+		manager1.linkObjPoint("xor5", 2, "o1", 0);
+		
+		manager1.linkObjPoint("xor6", 2, "o2", 0);
+		
+		manager1.linkObjPoint("xor7", 2, "o3", 0);

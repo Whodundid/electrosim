@@ -1,0 +1,125 @@
+Base engine requirements needed to complete:
+--------------------------------------------
+
+1. finish adding rest of gates           <FINISHED> (gates still require gate propagation timing physics to properly work as imagined)
+2. add the rest of the objects           <IN PROGRESS> (add the other flip flops and latches)
+3. create object points                  <FINISHED>
+4. define object point linking system    <FINISHED>
+5. define system speed					 <probably will happen when I've got the 
+6. define object update on change        <FINISHED>
+7. create swing visual                   <IN PROGRESS>
+8. ^ all the stuff involved with that
+9. finish creating object resources      <IN PROGRESS> <completely being re-thought on how to accomplish>
+10. create analog physics                <PAIN>
+11. create 3D designWindow				 <EVENTUALLY>
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. finish console delete function to properly delete objs from generators        <finsihed>
+
+2. work on drawing a picture that follows the mouse location in the VisualGUI    <finished>
+
+3. work on linking object points together through the VisualGUI system
+   along with the ObjectMover2D class.                              			 <visually working> <wires don't really do anything besides store connections however>
+
+4. create a background 'dot' image for a reference to move objects with          <finished>
+
+5. expect to have to fix the DesignSaver and DesignLoader at some point. Mainly
+   adding object point connections properly and accordingly.					 <finished for the moment>
+   
+6. eventually do a code clean up at some point focusing heavily on VisualGUI,
+   ObjectManager, and the Design Saver/Loader. Everything else seems pretty
+   good for the moment.															 <always in progress>
+   
+7. create a method for automatically drawing the appropriate amount of
+   input and output points on an object instead of manually making an fing
+   picture for each and every single possible visual object state. Any object
+   that would have anymore than even 3 inputs would be a nightmare to create
+   the artwork for.. 															 <finished>
+
+8. now that the ObjectManager and the VisualGUI have properly been
+   intertwinned with the help of the ObjectMover class, the Console class
+   is the next obvious thing that needs to be merged. As it stands right now,
+   the Console class really doesn't do anything related to the actual program.
+   In actuality, it would probably be better to merge the Console class with
+   the ConsoleWindow class first and then when that's working, merge with the
+   VisualGUI. The idea behind the console would be that it's a universal tool
+   that has access to every DesignPanel in the program and can perform all of
+   the functions that can be done through the VisualGUI but with added
+   functionality to be able to modify specific object properties that otherwise
+   cannot be normally changed. Such actions would be something like changing 
+   specific object point values to force a change in the object.                 <finished> <created consoleWindow as a result>
+   
+9. when linking an object point to another, create a wire object that will
+   essentially carry the signal from point A to point B in a sense. The wire
+   will also need to align itself to the grid structure of the rest of the 
+   design pane. When the wire is 'on' it should be easily noticeable that it
+   is different that an 'off' wire.												 <finished>
+
+10. eventually work on creating a copy/paste function. This should be able to
+    work across DesignPanels so that one object in one panel can be copied/cut
+    and pasted into another panel. In the event of object name collision
+    through copying from one object that has the name "and0" to another panel
+    where "and0" already exists, the pasted objects should all grab that
+    DesignPanel's ObjectManager's StorrageHandler's next availible name for
+    that type of object.														 <not started>
+    
+11. along with the copy/paste, there will be an undo/redo system. This will
+    probably have a edit history of something around 20-30 edits and it
+    will keep track of the number of edits made. After those 20/30 edits,
+    an automatic save of the design will be made incase of the program
+    unexpectedly crashing, loss of power, ect.									 <not started>
+    
+12. this isn't super high concern, but it would be nice to have the 'open'
+    button keep track of the last place a file was loaded and re-open to
+    there instead of defaulting to the documents folder.                         <not started>
+    
+13. add the ability to change the name of a design.                              <not started>
+
+14. add currently open designs into the project explorer window                  <not started>
+
+15. add other items (flip flops, lever, light, ect.) into the parts list         <not started>
+
+16. not sure how difficult it would be, but instead of grabing an object
+    and it centering itself around the mouse's location, use the reference
+    point that was clicked on the object as the mouse anchor point instead
+    of the center.																 <not started>
+    
+17. need to think of a way to 'cleanly' incorporate truth tables into the
+    DesignPanel.																 <finished> <truth tables are drawn through the consoleWindow>
+
+18. add the ability to select a group of objects, definie specific
+	input/output points, and create a sub assembly of the entire selection.
+	the sub assembly 'block' should allow for it's input points and output
+	points to be able to be moved around. 										 <not started>
+	
+19. this would be something that probably wouldn't be worked on for a while,
+    but be able to open a new design window that offers the ability to create
+    custom shapes for sub assembilies to be housed in. These then 'packaged'
+    sub assemblies can be saved to a file and can be imported into the editor
+    to be able to be placed as their own independant object.					 <not started>
+    
+20. create the damn images for the or and xor gates already..                    <finished>
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

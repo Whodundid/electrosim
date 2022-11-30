@@ -1,0 +1,13 @@
+Sim features
+------------
+1. Ability to work in both a 2d and 3d environment
+2. test circuits on both a digital and analog level
+3. work on specific levels of a pcb
+4. customize specific object propigation delay
+5. import exsiting electronic devices
+6. create new electronic devices and utilize that device as an individual part in editor
+7. support full electricity (volts, current, resistance, inductance, capacitance, ect.)
+8. modify design to randomize all specific part types (resistors, inductors, capacitors, ect.) values to fall within a threshold margin.
+	This will simulate more of a realistic environment where all parts are not a fixed value across the board.
+9. work with PLCs in design and edit ladder logic of part within.
+10. export a design to be able to be manufactured
